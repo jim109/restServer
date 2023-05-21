@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors')
 
+const { dbConnection } = require('../database/config')
+
 class Server {
 
     //Declaramos las propiedades dentro del constructor
@@ -12,6 +14,9 @@ class Server {
         //Api de usuarios
         this.usuariosPath = '/api/usuarios';
 
+        //Conectar a la base de datos
+        this.conectarDB();
+
         //Middlewares - son funciones que van a anadir otra funcionalidad l webserver
         this.middlewares();
 
@@ -20,6 +25,10 @@ class Server {
     }
 
     //Metodos
+    async conectarDB() {
+        await dbConnection();
+    }
+
     middlewares() {
         //CORS
         this.app.use( cors());
