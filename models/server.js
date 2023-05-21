@@ -8,7 +8,7 @@ class Server {
         //creamos la aplicacion de express como una propiedad en la clase
         this.app = express();
         //
-        this.port = process.env.PORT
+        this.port = process.env.PORT || 3000;
         //Api de usuarios
         this.usuariosPath = '/api/usuarios';
 
