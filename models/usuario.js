@@ -41,7 +41,9 @@ const UsuarioSchema = Schema({
 UsuarioSchema.methods.toJSON = function() {
     //usamos la desestructuracion y del objeto sacamos el password y el __v,
     //y creamos un objeto llamado usuario sin estos elementos para mostrar la repuesta
-    const { __v, password, ...usuario } = this.toObject();
+    const { __v, password, _id, ...usuario } = this.toObject();
+    //renombramos las variabel _id por uid
+    usuario.uid = _id;
     return usuario;
 }
 

@@ -66,18 +66,15 @@ const usuariosPatch = (req, res) => {
     })
 }
 
-const usuariosDelete = async(req, res) => {
+const usuariosDelete = async(req, res = response) => {
     
     const { id } = req.params;
-
-    //Borrarlos Fisicamente - NO RECOMENDABLE
-    // const usuario = await Usuario.findByIdAndDelete( id );
-
     const usuario = await Usuario.findByIdAndUpdate( id, {estado: false })
 
     res.json({
         msg: 'Delete API - Controlador',
-        usuario
+        usuario,
+ 
     })
 }
 
