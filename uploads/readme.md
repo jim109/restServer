@@ -1,0 +1,2 @@
+# Nota
+Aqui van a guardarse las imagenes del proyecto 
