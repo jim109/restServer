@@ -9,7 +9,7 @@ const router = Router();
 
 //usuariosGet lo mandamos por referencia a la misma
 router.get('/', usuariosGet);
-
+ 
 router.post('/', [
     //'nombre= validamos el campo', mensaje, not()negamos que no debe vebir vacio, isEmpty()vacio
     check('nombre', 'El nombre es obligatorio').not().isEmpty(),
